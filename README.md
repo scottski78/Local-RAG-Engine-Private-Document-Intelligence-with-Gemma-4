@@ -19,13 +19,16 @@ OS Target: macOS (Optimized for Apple Silicon)
 ├── ingest.py           # Script to process PDFs and update the database
 ├── query.py            # The user interface for chatting with documents
 └── README.md           # Project documentation
+
 ⚙️ Installation & Setup
 1. Prerequisites
 Install LM Studio.
 Download the Gemma-4 model within LM Studio.
+
 2. Clone and Environment Setup
 # Clone this repository
 git clone https://github.com/scottski78/Local-RAG-Engine-Private-Document-Intelligence-with-Gemma-4.git
+
 cd Local-RAG-Engine-Private-Document-Intelligence-with-Gemma-4
 
 # Create a virtual environment
@@ -61,6 +64,7 @@ Retrieval: When you ask a question, query.py uses the embedding model to turn yo
 Search: It performs a similarity search in ChromaDB to find the text chunks most mathematically similar to your question.
 Augmentation: The system "stuffs" those retrieved text chunks into a prompt template along with your original question.
 Generation: The augmented prompt is sent to the LM Studio local server, where Gemma-4 generates a natural language response based only on the provided context.
+
 ⚠️ Troubleshooting
 Connection Error: Ensure LM Studio's local server is active and the URL in query.py matches your LM Studio port (default http://localhost:1234/v1).
 No Results Found: Ensure you have run python ingest.py after adding files to the data/ folder.
