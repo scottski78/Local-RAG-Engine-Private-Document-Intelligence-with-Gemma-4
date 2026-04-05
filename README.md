@@ -38,12 +38,14 @@ source venv/bin/activate
 # Install dependencies
 pip install langchain langchain-openai langchain-community chromadb sentence-transformers pypdf
 📖 Usage Guide
+
 Step 1: Start the Local Inference Server
 Open LM Studio.
 Load the Gemma-4 model.
 Navigate to the Local Server tab (<-> icon).
 Ensure the port is set to 1234.
 Click Start Server.
+
 Step 2: Prepare Your Knowledge Base
 Place all the PDF documents you wish to "teach" the AI into the data/ folder.
 
