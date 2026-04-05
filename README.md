@@ -25,7 +25,7 @@ Install LM Studio.
 Download the Gemma-4 model within LM Studio.
 2. Clone and Environment Setup
 # Clone this repository
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+git clone https://github.com/scottski78/Local-RAG-Engine-Private-Document-Intelligence-with-Gemma-4.git
 cd YOUR_REPO_NAME
 
 # Create a virtual environment
