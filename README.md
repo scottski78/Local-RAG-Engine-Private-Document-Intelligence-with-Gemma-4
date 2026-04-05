@@ -14,10 +14,15 @@ Embedding Model: all-MiniLM-L6-v2 (Running locally via HuggingFace)
 Language: Python 3.10+
 OS Target: macOS (Optimized for Apple Silicon)
 📂 Project Structure
+
 ├── data/               # Place your PDF files here
+
 ├── chroma_db/          # The persistent vector database (auto-generated)
+
 ├── ingest.py           # Script to process PDFs and update the database
+
 ├── query.py            # The user interface for chatting with documents
+
 └── README.md           # Project documentation
 
 ⚙️ Installation & Setup
@@ -37,6 +42,7 @@ source venv/bin/activate
 
 # Install dependencies
 pip install langchain langchain-openai langchain-community chromadb sentence-transformers pypdf
+
 📖 Usage Guide
 
 Step 1: Start the Local Inference Server
@@ -62,12 +68,18 @@ python query.py
 Once the interface loads, type your question. The system will automatically retrieve the relevant context from your PDFs and use Gemma-4 to generate a precise answer.
 
 🔍 How it Works (The Pipeline)
+
 Retrieval: When you ask a question, query.py uses the embedding model to turn your question into a vector.
+
 Search: It performs a similarity search in ChromaDB to find the text chunks most mathematically similar to your question.
+
 Augmentation: The system "stuffs" those retrieved text chunks into a prompt template along with your original question.
+
 Generation: The augmented prompt is sent to the LM Studio local server, where Gemma-4 generates a natural language response based only on the provided context.
 
 ⚠️ Troubleshooting
 Connection Error: Ensure LM Studio's local server is active and the URL in query.py matches your LM Studio port (default http://localhost:1234/v1).
+
 No Results Found: Ensure you have run python ingest.py after adding files to the data/ folder.
+
 Slow Response: Large PDFs or high-parameter models require significant RAM/Unified Memory. For best results on Mac, ensure no other heavy applications are running.
